@@ -6,43 +6,41 @@
 // Traversal O(n)
 
 class Node {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
 }
 
 class Stack {
-    constructor() {
-        this.first = null;
-        this.last = null;
-        this.length = 0;
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.length = 0;
+  }
+
+  push(val) {
+    let node = new Node(val);
+    if (this.length === 0) {
+      this.first = node;
+      this.last = node;
+    } else {
+      let temp = this.first;
+      this.first = node;
+      this.first.next = temp;
     }
 
-    push(val) {
-        let node = new Node(val);
-        if(this.length === 0) {
-            this.first = node;
-            this.last = node;
-        }
+    return ++this.length;
+  }
 
-        else {
-            let temp = this.first;
-            this.first = node;
-            this.first.next = temp;
-        }
-
-        return ++this.length;
-    }
-
-    pop() {
-        let temp = this.first;
-        if(this.length === 0) return null;
-        if(this.first === this.last) this.last = null;
-        this.first = this.first.next;
-        this.length--;
-        return temp;
-    }
+  pop() {
+    let temp = this.first;
+    if (this.length === 0) return null;
+    if (this.first === this.last) this.last = null;
+    this.first = this.first.next;
+    this.length--;
+    return temp;
+  }
 }
 
 let stack = new Stack();
