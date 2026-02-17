@@ -5,8 +5,8 @@
 // Traverse O(n)
 
 class Node {
-  constructor(val) {
-    this.val = val;
+  constructor(value) {
+    this.value = value;
     this.next = null;
   }
 }
@@ -18,8 +18,8 @@ class SinglyLinkedList {
     this.tail = null;
   }
 
-  push(val) {
-    let node = new Node(val);
+  push(value) {
+    let node = new Node(value);
     if (!this.head) {
       this.head = node;
       this.tail = node;
@@ -62,8 +62,8 @@ class SinglyLinkedList {
     return currentNode;
   }
 
-  unshift(val) {
-    let node = new Node(val);
+  unshift(value) {
+    let node = new Node(value);
     if (!this.head) {
       this.head = node;
       this.tail = node;
@@ -84,28 +84,28 @@ class SinglyLinkedList {
     return currentNode;
   }
 
-  set(index, val) {
+  set(index, value) {
     let node = this.get(index);
     if (node) {
-      node.val = val;
+      node.value = value;
       return true;
     }
     return false;
   }
 
-  insert(index, val) {
+  insert(index, value) {
     if (index === 0) {
-      this.unshift(val);
+      this.unshift(value);
       return true;
     }
 
     if (index === this.length) {
-      this.push(val);
+      this.push(value);
       return true;
     }
 
     if (index > this.length || index < 0) return false;
-    let node = new Node(val);
+    let node = new Node(value);
     let prevNode = this.get(index - 1);
     let nextNode = prevNode.next;
     prevNode.next = node;

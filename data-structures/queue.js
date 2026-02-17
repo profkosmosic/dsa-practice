@@ -6,8 +6,8 @@
 // Traversal O(n)
 
 class Node {
-  constructor(val) {
-    this.val = val;
+  constructor(value) {
+    this.value = value;
     this.next = null;
   }
 }
@@ -19,8 +19,8 @@ class Queue {
     this.length = 0;
   }
 
-  enqueue(val) {
-    let node = new Node(val);
+  enqueue(value) {
+    let node = new Node(value);
     if (this.length === 0) {
       this.first = node;
       this.last = node;
