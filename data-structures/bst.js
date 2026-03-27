@@ -117,5 +117,4 @@ tree.insert(12);
 tree.insert(2);
 tree.insert(9);
 tree.insert(15);
-
 console.log(tree);
